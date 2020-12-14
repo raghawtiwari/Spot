@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Total documets found - {{content.numFound}}</h1>
+{% for i in content.docs %}
+<a href={{ i.Wiki_Page[0]}}>{{i.Title[0]}} - {{i.Release_Year[0]}}</a>
+<p>Director : {{i.Director[0]}}</p>
+<p>CAST : {{i.Cast[0]}}</p>
+<p>Genre : {{i.Genre[0]}}</p>
+<br>
+{% endfor %}
+<h2>Similar Documnets </h2>
+{% for i in content.docs %}
+<br>
+<a href={{ i.Wiki_Page[0]}}>{{i.combined[0]}} - {{i.Release_Year[0]}}</a>
+<br>
+<br>
+{% endfor %}
+</body>
+</html>
